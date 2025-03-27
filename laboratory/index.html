@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laboratorio - CyberStringerWorkbook</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .dyslexic-font {
+      font-family: 'Lexend', sans-serif;
+      letter-spacing: 0.05em;
+      line-height: 1.8;
+      word-spacing: 0.2em;
+    }
+    .dark {
+      background-color: #1a202c;
+      color: #e2e8f0;
+    }
+    .tag {
+      background-color: #ebf8ff;
+      color: #2c5282;
+      padding: 0.25rem 0.5rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+    }
+    .dark .tag {
+      background-color: #2a4365;
+      color: #90cdf4;
+    }
+    .card {
+      background-color: white;
+      border-radius: 0.5rem;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .dark .card {
+      background-color: #2d3748;
+    }
+    .badge-beginner {
+      background-color: #c6f6d5;
+      color: #22543d;
+    }
+    .dark .badge-beginner {
+      background-color: #276749;
+      color: #c6f6d5;
+    }
+    .badge-intermediate {
+      background-color: #fefcbf;
+      color: #744210;
+    }
+    .dark .badge-intermediate {
+      background-color: #975a16;
+      color: #fefcbf;
+    }
+    .badge-advanced {
+      background-color: #fed7d7;
+      color: #822727;
+    }
+    .dark .badge-advanced {
+      background-color: #9b2c2c;
+      color: #fed7d7;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="w-full py-4 border-b">
+    <div class="container mx-auto flex justify-between items-center px-4">
+      <a href="../index.html">
+        <h1 class="text-2xl font-bold">CyberStringerWorkbook</h1>
+      </a>
+      
+      <nav class="hidden md:flex space-x-6 mx-4">
+        <a href="../topics/index.html" class="hover:text-blue-600 transition-colors">
+          Temas
+        </a>
+        <a href="index.html" class="hover:text-blue-600 transition-colors">
+          Laboratorio
+        </a>
+        <a href="../about/index.html" class="hover:text-blue-600 transition-colors">
+          Acerca de
+        </a>
+      </nav>
+      
+      <div class="flex gap-2">
+        <button 
+          id="dyslexicToggle"
+          class="rounded-md border border-gray-300 h-10 w-10 inline-flex items-center justify-center"
+          aria-label="Cambiar a fuente para dislexia"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+          </svg>
+        </button>
+        <button 
+          id="darkModeToggle"
+          class="rounded-md border border-gray-300 h-10 w-10 inline-flex items-center justify-center"
+          aria-label="Cambiar modo oscuro/claro"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  
+  <div class="container mx-auto p-4">
+    <h1 class="text-3xl font-bold mb-8 mt-8">Laboratorios Prácticos</h1>
+    
+    <p class="mb-6">Esta sección contiene laboratorios prácticos para aplicar los conocimientos adquiridos en los temas teóricos. Cada laboratorio incluye instrucciones detalladas y archivos necesarios para completar los ejercicios.</p>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="card">
+        <h2 class="text-xl font-semibold mb-2">Laboratorio 1: Análisis de Tráfico con Wireshark</h2>
+        <div class="flex items-center mb-3">
+          <span class="badge-beginner text-xs px-2 py-1 rounded-full">Principiante</span>
+        </div>
+        <p class="mb-4">Aprende a identificar escaneos de descubrimiento de hosts y analizar patrones de tráfico sospechoso.</p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="tag">Wireshark</span>
+          <span class="tag">Análisis de Red</span>
+          <span class="tag">Escaneos</span>
+        </div>
+        <a href="#" class="text-sm text-blue-600 hover:underline">Ver laboratorio →</a>
+      </div>
+      
+      <div class="card">
+        <h2 class="text-xl font-semibold mb-2">Laboratorio 2: Análisis de Correos de Phishing</h2>
+        <div class="flex items-center mb-3">
+          <span class="badge-beginner text-xs px-2 py-1 rounded-full">Principiante</span>
+        </div>
+        <p class="mb-4">Identifica indicadores de phishing en correos electrónicos y analiza cabeceras para determinar el origen.</p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="tag">Phishing</span>
+          <span class="tag">Email</span>
+          <span class="tag">Análisis</span>
+        </div>
+        <a href="#" class="text-sm text-blue-600 hover:underline">Ver laboratorio →</a>
+      </div>
+      
+      <div class="card">
+        <h2 class="text-xl font-semibold mb-2">Laboratorio 3: Análisis Estático de Malware</h2>
+        <div class="flex items-center mb-3">
+          <span class="badge-intermediate text-xs px-2 py-1 rounded-full">Intermedio</span>
+        </div>
+        <p class="mb-4">Realiza análisis estático básico de muestras de malware en un entorno seguro.</p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="tag">Malware</span>
+          <span class="tag">Análisis Estático</span>
+          <span class="tag">Seguridad</span>
+        </div>
+        <a href="#" class="text-sm text-blue-600 hover:underline">Ver laboratorio →</a>
+      </div>
+      
+      <div class="card">
+        <h2 class="text-xl font-semibold mb-2">Laboratorio 4: Análisis de Logs de Windows</h2>
+        <div class="flex items-center mb-3">
+          <span class="badge-intermediate text-xs px-2 py-1 rounded-full">Intermedio</span>
+        </div>
+        <p class="mb-4">Aprende a identificar actividades sospechosas en logs de eventos de Windows.</p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="tag">Logs</span>
+          <span class="tag">Windows</span>
+          <span class="tag">Análisis</span>
+        </div>
+        <a href="#" class="text-sm text-blue-600 hover:underline">Ver laboratorio →</a>
+      </div>
+    </div>
+  </div>
+  
+  <footer class="py-6 border-t mt-auto">
+    <div class="container mx-auto text-center text-sm text-gray-500">
+      <p>CyberStringerWorkbook © 2025</p>
+      <p class="mt-1">Manual Completo para Analistas Junior de Ciberseguridad</p>
+    </div>
+  </footer>
+
+  <script>
+    // Dark mode toggle
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+    
+    // Check for saved theme preference or use preferred color scheme
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      body.classList.add('dark');
+    }
+    
+    darkModeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark');
+      localStorage.setItem('theme', body.classList.contains('dark') ? 'dark' : 'light');
+    });
+    
+    // Dyslexic font toggle
+    const dyslexicToggle = document.getElementById('dyslexicToggle');
+    
+    // Check for saved font preference
+    const savedFont = localStorage.getItem('dyslexicFont');
+    if (savedFont === 'enabled') {
+      document.documentElement.classList.add('dyslexic-font');
+    }
+    
+    dyslexicToggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dyslexic-font');
+      localStorage.setItem('dyslexicFont', document.documentElement.classList.contains('dyslexic-font') ? 'enabled' : 'disabled');
+    });
+  </script>
+</body>
+</html>
